@@ -12,9 +12,30 @@ namespace BeerStoreWinApp
 {
     public partial class HomePage : Form
     {
+
+        // define variables
+        StuffToBuy localStuffToBuy;
+        UserAccount shopper;
+        public static string DBPath;
+        public ShoppingCart theShoppersCart = ShoppingCart.Instance;
+
         public HomePage()
         {
             InitializeComponent();
+            DBPath = Application.StartupPath;
+            localStuffToBuy = new StuffToBuy();
+            shopper = new UserAccount();
+
+        }
+
+        private void button_shopForBeer_Click(object sender, EventArgs e)
+        {
+            localStuffToBuy.Show();
+        }
+
+        private void button_login_Click(object sender, EventArgs e)
+        {
+            shopper.Show();
         }
     }
 }
