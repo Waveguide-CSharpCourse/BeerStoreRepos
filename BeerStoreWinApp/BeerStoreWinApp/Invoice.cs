@@ -15,6 +15,7 @@ namespace BeerStoreWinApp
         public Invoice()
         {
             InitializeComponent();
+            //brad's comment 05-20-2016
         }
     }
 }
