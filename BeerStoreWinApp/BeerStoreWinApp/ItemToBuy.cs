@@ -14,7 +14,7 @@ namespace BeerStoreWinApp
     {
         // define variables
         string ImagePath;
-        internal ShoppingCart theShoppersCart = ShoppingCart.Instance;
+        ShoppingCart theShoppersCart = new ShoppingCart();
 
         // class members
         int ID;

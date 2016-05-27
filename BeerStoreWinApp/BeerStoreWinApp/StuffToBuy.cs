@@ -14,7 +14,7 @@ namespace BeerStoreWinApp
     {
         // define variables
         BeerData localBeerDataObj = new BeerData();
-        internal ShoppingCart theShoppersCart = ShoppingCart.Instance;
+        ShoppingCart theShoppersCart;
 
         public StuffToBuy()
         {
@@ -28,6 +28,7 @@ namespace BeerStoreWinApp
 
         private void button_viewCart_Click(object sender, EventArgs e)
         {
+            theShoppersCart = new ShoppingCart();
             theShoppersCart.Show();
         }
 

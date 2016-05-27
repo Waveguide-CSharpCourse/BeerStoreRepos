@@ -17,19 +17,18 @@ namespace BeerStoreWinApp
         StuffToBuy localStuffToBuy;
         UserAccount shopper;
         public static string DBPath;
-        public ShoppingCart theShoppersCart = ShoppingCart.Instance;
 
         public HomePage()
         {
             InitializeComponent();
             DBPath = Application.StartupPath;
-            localStuffToBuy = new StuffToBuy();
             shopper = new UserAccount();
 
         }
 
         private void button_shopForBeer_Click(object sender, EventArgs e)
         {
+            localStuffToBuy = new StuffToBuy();
             localStuffToBuy.Show();
         }
 

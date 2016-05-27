@@ -93,6 +93,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ShoppingCart";
             this.Text = "ShoppingCart";
+            this.Load += new System.EventHandler(this.ShoppingCart_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
