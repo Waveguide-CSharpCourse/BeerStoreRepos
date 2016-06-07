@@ -20,7 +20,7 @@ namespace BeerStoreWinApp
         /// </summary>
         public BeerData()
         {
-            DBPath = @"..\..\..\Data\ItemData.accdb";
+            DBPath = @"C:\Users\lnguyen\Source\Repos\BeerStoreRepos\BeerStoreWinApp\BeerStoreWinApp\Data\ItemData.accdb";
             //DBPath = @"C:\Users\tlyde\Documents\C# Course\CodeSamples\BeerStoreRepos\BeerStoreWinApp\BeerStoreWinApp\Data\ItemData.accdb";
             connection_string_BeerTable = @"Provider=Microsoft.ACE.OLEDB.12.0; Persist Security Info=False; Data Source= " + DBPath;
         }
