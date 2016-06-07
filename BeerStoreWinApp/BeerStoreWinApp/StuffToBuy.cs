@@ -45,7 +45,16 @@ namespace BeerStoreWinApp
             int Y_index = 0;
             foreach (DataRow aRow in beerItems.Rows)
             {
-                ItemToBuy newBeerItem = new ItemToBuy((int)aRow[0], aRow[1].ToString(), aRow[2].ToString(), aRow[3].ToString());
+                decimal temp1;
+                try
+                {
+                    temp1 = decimal.Parse(aRow[4].ToString());
+                }
+                catch
+                {
+                    temp1 = 1.00m;
+                }
+             ItemToBuy newBeerItem = new ItemToBuy((int)aRow[0], aRow[1].ToString(), aRow[2].ToString(), aRow[3].ToString(), temp1);
                 int xcoord = 25 + (X_index * width);
                 int ycoord = 40 + (Y_index * height);
                 newBeerItem.Location = new System.Drawing.Point(xcoord, ycoord);
