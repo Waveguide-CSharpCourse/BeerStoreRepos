@@ -23,13 +23,14 @@ namespace BeerStoreWinApp
         {
             InitializeComponent();
             DBPath = Application.StartupPath;
-            localStuffToBuy = new StuffToBuy();
+            //localStuffToBuy = new StuffToBuy();
             shopper = new UserAccount();
 
         }
 
         private void button_shopForBeer_Click(object sender, EventArgs e)
         {
+            localStuffToBuy = new StuffToBuy();
             localStuffToBuy.Show();
         }
 
