@@ -41,7 +41,7 @@ namespace BeerStoreWinApp
         {
             InitializeComponent();
             //ImagePath = @"C:\Users\tlyde\Documents\C# Course\CodeSamples\BeerStoreRepos\BeerStoreWinApp\BeerStoreWinApp\Images\";
-            ImagePath = @"C:\Users\lnguyen\Source\Repos\BeerStoreRepos\BeerStoreWinApp\BeerStoreWinApp\Images\";
+            ImagePath = @"C:\Users\jcerezo\Documents\Visual Studio 2015\Projects\BeerStoreRepos\BeerStoreWinApp\BeerStoreWinApp\Images\";
             ID = _ID;
             name = _name;
             Name = name.Replace(" ", "");

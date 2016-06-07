@@ -20,7 +20,7 @@ namespace BeerStoreWinApp
         /// </summary>
         public BeerData()
         {
-            DBPath = @"C:\Users\lnguyen\Source\Repos\BeerStoreRepos\BeerStoreWinApp\BeerStoreWinApp\Data\ItemData.accdb";
+            DBPath = @"C:\Users\jcerezo\Documents\Visual Studio 2015\Projects\BeerStoreRepos\BeerStoreWinApp\BeerStoreWinApp\Data\ItemData.accdb";
             //DBPath = @"C:\Users\tlyde\Documents\C# Course\CodeSamples\BeerStoreRepos\BeerStoreWinApp\BeerStoreWinApp\Data\ItemData.accdb";
             connection_string_BeerTable = @"Provider=Microsoft.ACE.OLEDB.12.0; Persist Security Info=False; Data Source= " + DBPath;
         }
@@ -59,6 +59,40 @@ namespace BeerStoreWinApp
             return beerData;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public DataTable getMunchiesData()
+        {
+            DataTable munchiesData = new DataTable();
+            /*
+                Codes that handles query from database
+            */
+            using (OleDbConnection connection = new OleDbConnection(connection_string_BeerTable))
+            {
+                string cmdText = @"SELECT * FROM [JunkFood]";
+                using (OleDbDataAdapter tempAdapter = new OleDbDataAdapter(cmdText, connection))
+                using (new OleDbCommandBuilder(tempAdapter))
+                {
+                    try
+                    {
+                        connection.Open();
+                        tempAdapter.Fill(munchiesData);  //fills adapter with values from table
+                    }
+                    catch (Exception sqlexc)
+                    {
+                        Console.WriteLine("Error reading Beers Table: " + sqlexc.ToString());
+                    }
+                    finally
+                    {
+                        connection.Close();
+                        tempAdapter.Dispose();
+                    }
+                }
+            }
+            
+            return munchiesData;
+        }
 
     }
 }
