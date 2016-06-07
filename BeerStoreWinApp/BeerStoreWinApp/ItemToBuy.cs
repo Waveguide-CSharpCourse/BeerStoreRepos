@@ -14,7 +14,7 @@ namespace BeerStoreWinApp
     {
         // define variables
         string ImagePath;
-        internal ShoppingCart theShoppersCart = ShoppingCart.Instance;
+        ShoppingCart theShoppersCart = new ShoppingCart();
 
         // class members
         int ID;
@@ -23,6 +23,7 @@ namespace BeerStoreWinApp
         int x_pos;
         int y_pos;
         string imageFilename;
+        decimal price;
 
         public struct cartItem
         {
@@ -30,12 +31,13 @@ namespace BeerStoreWinApp
             public string name;
             public string description;
             public int quantity;
+            public decimal price;
         }
         public ItemToBuy()
         {
             InitializeComponent();
         }
-        public ItemToBuy(int _ID, string _name, string _description, string _imageFilename)
+        public ItemToBuy(int _ID, string _name, string _description, string _imageFilename, decimal _price)
         {
             InitializeComponent();
             //ImagePath = @"C:\Users\tlyde\Documents\C# Course\CodeSamples\BeerStoreRepos\BeerStoreWinApp\BeerStoreWinApp\Images\";
@@ -45,6 +47,7 @@ namespace BeerStoreWinApp
             Name = name.Replace(" ", "");
             description = _description;
             imageFilename = _imageFilename;
+            price = _price;
             this.label_name.Text = name;
             this.richTextBox_description.Text = description;
             this.pictureBox1.ImageLocation = ImagePath + _imageFilename;
@@ -64,6 +67,7 @@ namespace BeerStoreWinApp
                 itemToAdd.description = description;
                 itemToAdd.name = name;
                 itemToAdd.quantity = int.Parse(this.domainUpDown_quantity.SelectedItem.ToString());
+                itemToAdd.price = price;
                 theShoppersCart.addToCart(itemToAdd);
             }
         }

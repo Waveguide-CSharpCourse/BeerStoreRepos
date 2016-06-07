@@ -1,25 +1,14 @@
 ﻿using System.Windows.Forms;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BeerStoreWinApp
 {
-    public sealed partial class ShoppingCart : Form
-    {
-        // only want 1 instance of the shopping cart for the 1 user
-        static readonly ShoppingCart _instance = new ShoppingCart();
-
-        
+    public partial class ShoppingCart : Form
+    {        
         // define needed variables
         static List<ItemToBuy.cartItem> shoppingCartList = new List<ItemToBuy.cartItem>();
 
-
-        public static ShoppingCart Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
 
         public void addToCart(ItemToBuy.cartItem itemToAdd)
         {
@@ -27,11 +16,15 @@ namespace BeerStoreWinApp
         }
 
 
-        ShoppingCart()
+        public ShoppingCart()
         {
             InitializeComponent();
         }
 
+        private void ShoppingCart_Load(object sender, System.EventArgs e)
+        {
+
+        }
 
     }
 }
