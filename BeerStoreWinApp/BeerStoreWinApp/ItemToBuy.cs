@@ -25,6 +25,7 @@ namespace BeerStoreWinApp
         string imageFilename;
         decimal price;
 
+        // information needed for shopping cart
         public struct cartItem
         {
             public string ID;
@@ -33,10 +34,14 @@ namespace BeerStoreWinApp
             public int quantity;
             public decimal price;
         }
+
+        // default constructor
         public ItemToBuy()
         {
             InitializeComponent();
         }
+
+        // constructor to add items
         public ItemToBuy(int _ID, string _name, string _description, string _imageFilename, decimal _price)
         {
             InitializeComponent();
